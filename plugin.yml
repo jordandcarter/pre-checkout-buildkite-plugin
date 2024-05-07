@@ -1,0 +1,9 @@
+name: Pre-Checkout
+description: Runs a command before checkout
+author: https://github.com/jordandcarter
+requirements: []
+configuration:
+  properties:
+    cmd:
+      type: string
+  additionalProperties: false
