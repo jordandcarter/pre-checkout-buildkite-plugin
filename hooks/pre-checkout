@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euo pipefail
+
+CMD="$BUILDKITE_PLUGIN_PRE_CHECKOUT_CMD"
+# Check if BUILDKITE_PLUGIN_PRE_CHECKOUT_CMD is set
+if [ -z "$BUILDKITE_PLUGIN_PRE_CHECKOUT_CMD" ]; then
+    echo "Error: Environment variable CMD is not set."
+    exit 1
+fi
+
+# Execute the command stored in BUILDKITE_PLUGIN_PRE_CHECKOUT_CMD
+echo "Executing command: $BUILDKITE_PLUGIN_PRE_CHECKOUT_CMD"
+eval "$BUILDKITE_PLUGIN_PRE_CHECKOUT_CMD"
